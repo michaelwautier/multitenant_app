@@ -1,3 +1,3 @@
 class Product < ApplicationRecord
-  belongs_to :shop
+  has_many :product_reviews
 end

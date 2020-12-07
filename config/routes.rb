@@ -4,9 +4,19 @@ class SubdomainConstraint
   end
 end
 Rails.application.routes.draw do
+  get 'product_reviews/new'
+  get 'product_reviews/create'
   constraints SubdomainConstraint do
-    resources :shops
+    resources :products do
+      resources :product_reviews, only: [ :new, :create ]
+    end
   end
-  resources :products
+  resources :shops
   root 'products#index'
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :products, only: [ :index, :show ]
+    end
+  end
 end
