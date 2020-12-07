@@ -64,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'apartment'
 
 gem 'active_model_serializers'
+
+gem 'interactor-rails', '~> 2.2', '>= 2.2.1'
+
+gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
