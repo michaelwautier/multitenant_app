@@ -67,3 +67,5 @@ gem 'apartment'
 gem 'active_model_serializers'
 
 gem 'interactor-rails', '~> 2.2', '>= 2.2.1'
+
+gem 'simple_form', '~> 5.0', '>= 5.0.3'

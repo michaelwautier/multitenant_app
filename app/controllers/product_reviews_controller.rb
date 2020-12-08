@@ -7,13 +7,23 @@ class ProductReviewsController < ApplicationController
   end
 
   def create
-    result = AddReview.call(params: product_review_params, product: @product)
-
-    if result.success?
+    # WITH SERVICE
+    if AddReviewService.call(product_review_params, @product)
       redirect_to product_path(@product)
     else
       render :new
     end
+
+    # WITH INTERACTOR
+    # result = AddReview.call(params: product_review_params, product: @product)
+
+    # if result.success?
+    #   redirect_to product_path(@product)
+    # else
+    #   render :new
+    # end
+
+    # VANILLA
     # @product_review = ProductReview.new(product_review_params)
     # @product_review.product = @product
     # if @product_review.save

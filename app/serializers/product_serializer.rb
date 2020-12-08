@@ -18,7 +18,8 @@ class ProductSerializer < ActiveModel::Serializer
     object.product_reviews.map do |review|
       { id: review.id,
         content: review.content,
-        rating: review.rating }
+        rating: review.rating,
+        posted_on: review.created_at.getlocal.strftime('%d-%m-%Y - %H:%M') }
     end
   end
 end
