@@ -116,5 +116,10 @@ RSpec.describe Product, type: :model do
         expect(@product.price_in_cents).to be_a(Integer)
       end
     end
+    context '#product_reviews' do
+      it 'has many reviews' do
+        expect(@product).to respond_to(:product_reviews)
+      end
+    end
   end
 end

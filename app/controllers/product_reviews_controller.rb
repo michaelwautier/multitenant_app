@@ -14,6 +14,13 @@ class ProductReviewsController < ApplicationController
     else
       render :new
     end
+    # @product_review = ProductReview.new(product_review_params)
+    # @product_review.product = @product
+    # if @product_review.save
+    #   redirect_to product_path(@product)
+    # else
+    #   render :new
+    # end
   end
 
   private
