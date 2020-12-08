@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Shop, type: :model do
+  after(:context) { Apartment::Tenant.drop('rspecshop') }
+
   let(:valid_attributes) do
     {
       name: 'RSpec Shop',
@@ -54,7 +56,6 @@ RSpec.describe Shop, type: :model do
     it 'should generate a new shop if all params are given' do
       shop = Shop.create!(@attributes)
       expect(shop).to be_a(Shop)
-      Apartment::Tenant.drop('rspecshop')
     end
   end
   context 'instance method' do
