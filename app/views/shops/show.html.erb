@@ -15,5 +15,6 @@
   <%= @shop.subdomain %>
 </p>
 
+<%= link_to 'Shop tenant', "http://#{@shop.subdomain}.lvh.me:3000" %> |
 <%= link_to 'Edit', edit_shop_path(@shop) %> |
 <%= link_to 'Back', shops_path %>

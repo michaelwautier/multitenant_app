@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ProductReview, type: :model do
   before(:context) do
+    Apartment::Tenant.drop('rspecshop')
     Shop.create(
       name: 'RSpec Shop',
       city: 'Nivelles',

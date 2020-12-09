@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Shop, type: :model do
-  after(:context) { Apartment::Tenant.drop('rspecshop') }
+  after(:context) do
+    Apartment::Tenant.drop('rspecshop')
+end
 
   let(:valid_attributes) do
     {
