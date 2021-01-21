@@ -13,3 +13,80 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+ }
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: #f05454;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 50px;
+}
+
+nav img {
+  width: 30px;
+  height: 30px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.flex-justify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 5fr;
+  grid-gap: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.grid-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.table-header {
+  font-weight: bold;
+}
+
+.row {
+  padding-bottom: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 a {
+  color: white
+}

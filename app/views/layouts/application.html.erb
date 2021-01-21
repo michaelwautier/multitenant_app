@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <div class="container">
+        <div class="flex-justify">
+          <h2><a href="/">My Multitenant App</a></h2>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

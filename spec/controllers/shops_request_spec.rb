@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 begin
-  require "shops_controller"
+  require 'shops_controller'
 rescue LoadError
 end
 
@@ -29,6 +29,22 @@ if defined?(ShopsController)
       it 'renders the index template' do
         get :index
         expect(response).to render_template('index')
+      end
+    end
+
+    describe 'GET show' do
+      it 'assigns the requested shop as @shop' do
+        Apartment::Tenant.drop('rspecshop')
+        shop = Shop.create(valid_attributes)
+        get :show, params: { id: shop.id }
+        expect(assigns(:shop)).to eq(shop)
+      end
+
+      it 'renders the show template' do
+        Apartment::Tenant.drop('rspecshop')
+        shop = Shop.create(valid_attributes)
+        get :show, params: { id: shop.id }
+        expect(response).to render_template('show')
       end
     end
   end

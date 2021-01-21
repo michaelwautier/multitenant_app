@@ -1,6 +1,4 @@
 class AddReviewService < ApplicationService
-  attr_reader :content, :rating
-
   def initialize(params, product)
     @review = ProductReview.new(params)
     @product = product

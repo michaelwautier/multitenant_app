@@ -1,32 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Shops</h1>
+<h1>All Shops <%= link_to '+', new_shop_path %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>City</th>
-      <th>Subdomain</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<div class="grid">
+  <div class="table-header">Name</div>
+  <div class="table-header">City</div>
+  <div class="table-header">Subdomain</div>
+  <div class="table-header">---</div>
+</div>
+<% @shops.each do |shop| %>
+  <div class="grid row">
+    <div><%= link_to shop.name, shop %></div>
+    <div><%= shop.city %></div>
+    <div><%= shop.subdomain %></div>
+    <div>
+      <%= link_to 'Go to tenant', "http://#{shop.subdomain}.lvh.me:3000" %>
+      <%= link_to 'Edit', edit_shop_path(shop) %>
+      <%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
 
-  <tbody>
-    <% @shops.each do |shop| %>
-      <tr>
-        <td><%= shop.name %></td>
-        <td><%= shop.city %></td>
-        <td><%= shop.subdomain %></td>
-        <td><%= link_to 'Tenant', "http://#{shop.subdomain}.lvh.me:3000" %></td>
-        <td><%= link_to 'Show', shop %></td>
-        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Shop', new_shop_path %>

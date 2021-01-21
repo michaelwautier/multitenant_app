@@ -1,5 +1,6 @@
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :price, :stock, :reviews
+  attributes :id, :name, :description, :price, :stock
+  has_many :reviews
 
   def name
     object.name.upcase
